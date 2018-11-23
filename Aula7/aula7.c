@@ -11,8 +11,8 @@ typedef struct NODOAB
 
 int altura(NodoAB *A);
 int completa(NodoAB *A);
-NodoAB *espelho(NodoAB *A); //espelhar uma árvore, árvore direita passa a ser a esquerda
-int Xrepetidos(NodoAb *A);  //retorna 1 se houver IDs repetidos, 0 se não houver
+NodoAB *espelho(NodoAB *A);              //espelhar uma árvore, árvore direita passa a ser a esquerda
+int Xrepetidos(NodoAB *A, NodoAB *raiz); //retorna 1 se houver IDs repetidos, 0 se não houver
 NodoAB *apagaArvore(NodoAB *A);
 NodoAB *apagaDeireita(NodoAB *A);
 
@@ -72,7 +72,7 @@ int completa(NodoAB *A)
 
     if (contarFolhas(A) == pow(2, altura(A) - 1))
     {
-        return 1
+        return 1;
     }
     return 0;
 }
@@ -89,7 +89,7 @@ int contarFolhas(NodoAB *A)
 
 NodoAB *espelho(NodoAB *A)
 {
-    Nodo *AB temp;
+    NodoAB *temp;
     if (A == NULL)
         return A;
 
@@ -107,7 +107,7 @@ int Xrepetidos(NodoAB *A, NodoAB *raiz) //IMPORTANTE!!!
 
     if (findNode_NaoChave(raiz, A->nChave) != A)
         return 1;
-    return Xrepetidos(A->fd, raiz) || Xrepetidos(A->fe, raiz);ffiN)
+    return Xrepetidos(A->fd, raiz) || Xrepetidos(A->fe, raiz);
 }
 
 NodoAB *apagarArvore(NodoAB *A)
@@ -133,9 +133,9 @@ NodoAB *apagarArvoreProf(NodoAB *A)
 NodoAB *apagaDireita(NodoAB *A)
 {
     if (A == NULL)
-        return NULL
+        return NULL;
 
-                   A->fd = apagaArvore(A->fd);
+    A->fd = apagaArvore(A->fd);
 
     A->fe = apagaDireita(A->fe);
 
