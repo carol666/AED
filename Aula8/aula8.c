@@ -97,6 +97,7 @@ int contem(NodoAB *A, NodoAB *B)
 
 int modaX(NodoAB *A)
 {
+    //FAZER!!!!!
 }
 
 int contarNodos(NodoAB *A)
